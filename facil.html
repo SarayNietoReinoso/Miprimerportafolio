@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MI PRIMER PORTAFOLIO – SARAY NIETO REINOSO</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      padding-bottom: 70px; /* espacio para que no tape la barra inferior */
+    }
+
+    /* Encabezado con logo */
+    .top-header {
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .top-header .logotipo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    /* Barra inferior fija */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #e8e8e7;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .bottom-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .bottom-nav ul li {
+      position: relative;
+    }
+
+    .bottom-nav ul li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: black;
+      padding: 12px;
+      text-decoration: none;
+    }
+
+    .bottom-nav ul li a:hover {
+      color: #d4006e;
+    }
+
+    /* Submenús (ocultos por defecto) */
+    .bottom-nav ul.submenu {
+      display: none;
+      position: absolute;
+      bottom: 50px; /* encima de la barra inferior */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      list-style: none;
+      margin: 0;
+      padding: 5px 0;
+      min-width: 140px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .bottom-nav ul.submenu li a {
+      padding: 8px 12px;
+      font-size: 14px;
+      display: block;
+      color: black;
+    }
+
+    .bottom-nav ul.submenu li a:hover {
+      background: #f0f0f0;
+    }
+
+    /* Mostrar submenú en escritorio al pasar el ratón */
+    @media (min-width: 769px) {
+      .bottom-nav ul li.tiene-submenu:hover > ul.submenu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado con logo -->
+  <header class="top-header">
+    <div class="logotipo">
+        <a href="index.html">
+            <img src="https://i.imgur.com/6t4a3ty.png" alt="Mi logo">
+        </a>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align:center;font-family:cursive;">PROYECTOS FÁCILES</h1>
+    <p style="padding:20px; text-align:justify;">
+      En este apartado encontraras pequeños proyectos utilizando...
+    </p>
+    <h2 style="text-align: center; font-family: cursive;">CALCULADORA.</h2>
+    <p style="padding:20px; text-align:justify;">
+      En este apartado hago una descripción para la creación de...
+    </p>
+  </main>
+
+  <!-- Barra inferior fija -->
+  <nav class="bottom-nav">
+    <ul>
+      <li>
+        <a href="cv.html"><i class="fa-solid fa-user"></i></a>
+      </li>
+
+      <li class="tiene-submenu">
+        <a href="trabajos.html"><i class="fa-solid fa-briefcase"></i></a>
+        <ul class="submenu">
+          <li><a href="facil.html">FÁCIL</a></li>
+          <li><a href="intermedio.html">INTERMEDIO</a></li>
+          <li><a href="avanzado.html">AVANZADO</a></li>
+          <li><a href="trabajos.html">TODOS</a></li>
+        </ul>
+      </li>
+
+      <li class="tiene-submenu">
+        <a href="videos.html"><i class="fa-solid fa-video"></i></a>
+        <ul class="submenu">
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="JavaScript.html">JavaScript</a></li>
+          <li><a href="Python.html">Python</a></li>
+          <li><a href="Angular.html">Angular</a></li>
+          <li><a href="videos.html">TODOS</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="contacto.html"><i class="fa-solid fa-envelope"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+  <footer style="text-align:center; padding:20px;">
+    <p>&copy; 2025 Saray Nieto. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS para abrir submenús en móvil -->
+  <script>
+    document.querySelectorAll(".tiene-submenu > a").forEach(el => {
+      el.addEventListener("click", function(e) {
+        // Evita ir directo al enlace si hay submenú
+        e.preventDefault();
+        let submenu = this.nextElementSibling;
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>
